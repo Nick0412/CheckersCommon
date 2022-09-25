@@ -5,14 +5,11 @@ class CheckersCommonConan(ConanFile):
     name = "CheckersCommon"
     version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
-    description = "<Description of CheckersCommon here>"
-    url = "None"
-    license = "None"
-    author = "None"
-    topics = None
+    description = "Common code and utilities for CheckersClient and CheckersServer."
+    url = "https://github.com/Nick0412/CheckersCommon.git"
 
-    def package(self):
-        self.copy("*")
+    def requirements(self):
+        self.requires("gtest/1.12.1")
 
-    def package_info(self):
-        self.cpp_info.libs = tools.collect_libs(self)
+    def configure(self):
+        self.generators = ["cmake"]
