@@ -3,7 +3,12 @@
 
 namespace Networking
 {
-    Address::Address(const std::string& ipAddress, uint16_t port, IpType type = IpType::IPv4)
+    Address::Address()
+    {
+
+    }
+
+    Address::Address(const std::string& ipAddress, uint16_t port, IpType type)
     {
         address.sin_family = type;
         address.sin_port = ConvertPortToNetworkShort(port);
@@ -29,6 +34,12 @@ namespace Networking
     struct sockaddr* Address::pointer()
     {
         return reinterpret_cast<struct sockaddr*>(&address);
+    }
+
+    const struct sockaddr* Address::constPointer()
+    {
+        auto sockAddrCast = reinterpret_cast<struct sockaddr*>(&address);
+        return const_cast<const struct sockaddr*>(sockAddrCast);
     }
 
     uint16_t Address::ConvertPortToNetworkShort(uint16_t port)

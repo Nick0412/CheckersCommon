@@ -18,12 +18,13 @@ namespace Networking
     class Address
     {
     public:
-        Address() = delete;
+        Address();
         Address(const std::string& ipAddress, uint16_t port, IpType type = IpType::IPv4);
         std::string getIpAddress() const;
         uint16_t getPort() const;
         std::size_t size() const;
         struct sockaddr* pointer();
+        const struct sockaddr* constPointer();
 
     public:
         // Helpful method for printing out details of an address.

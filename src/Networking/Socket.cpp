@@ -14,7 +14,7 @@ namespace Networking
 
     }
 
-    Socket::Socket(SocketType type = SocketType::TCP, IpType ipType = IpType::IPv4)
+    Socket::Socket(SocketType type, IpType ipType)
     : socketFileDescriptor{socket(ipType, type, 0)}
     {
         if (socketFileDescriptor == -1)

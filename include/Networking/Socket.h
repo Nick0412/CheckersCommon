@@ -2,8 +2,8 @@
 #define SOCKET_H
 
 #include <sys/socket.h>
-#include <SocketType.h>
-#include <IpType.h>
+#include "SocketType.h"
+#include "IpType.h"
 
 namespace Networking
 {
@@ -21,6 +21,7 @@ namespace Networking
         Socket(const Socket& other) = delete;
         Socket& operator=(const Socket& other) = delete;
 
+        // TODO: Evaluate if this constructor should even exist.
         Socket(SocketType type = SocketType::TCP, IpType ipType = IpType::IPv4);
         Socket(int fileDescriptor);
         ~Socket();

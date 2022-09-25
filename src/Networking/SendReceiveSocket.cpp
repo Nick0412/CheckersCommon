@@ -34,5 +34,7 @@ namespace Networking
 
             bytesRead += recv(socketFileDescriptor, offsetInData, remainingNumberOfBytes, 0);
         }
+
+        return dataToReturn;
     }
 }
