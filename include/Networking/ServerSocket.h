@@ -9,9 +9,6 @@ namespace Networking
 {
     class ServerSocket : public Socket
     {
-    private:
-        int numberOfConnections;
-
     public:
         ServerSocket() = delete;
         SendReceiveSocket getConnectedSocket();
@@ -22,12 +19,13 @@ namespace Networking
             Address address;
             SocketType sockType;
             IpType ipType;
+            int numberOfConnections;
 
         public:
-            ServerSocketBuilder& address(Address& address);
-            ServerSocketBuilder& socketType(SocketType& sockType);
-            ServerSocketBuilder& ipType(IpType& ipType);
-            ServerSocketBuilder& numberOfConnections(int& numberOfConnections);
+            ServerSocketBuilder& withAddress(const Address& address);
+            ServerSocketBuilder& withSocketType(const SocketType& sockType);
+            ServerSocketBuilder& withIpType(const IpType& ipType);
+            ServerSocketBuilder& withNumberOfConnections(int numberOfConnections);
             ServerSocket build();
         };
 

@@ -7,6 +7,10 @@
 ```
 mkdir build
 cd build
+# Replace path gcc version 11 location
+export CC=/usr/bin/gcc-11
+# Replace path g++ version 11 location
+export CXX=/usr/bin/g++-11
 conan install ..
 cmake ..
 cmake --build .
