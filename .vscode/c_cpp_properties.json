@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "includePath": ["${workspaceFolder}/**", "~/.conan/data/**"]
+        }
+    ],
+    "version": 4
+}

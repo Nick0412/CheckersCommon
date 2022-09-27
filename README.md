@@ -10,7 +10,27 @@ This repository is hold the common code that will be used between the CheckersCl
 ```
 mkdir build
 cd build
+# Replace path gcc version 11 location
+export CC=/usr/bin/gcc-11
+# Replace path g++ version 11 location
+export CXX=/usr/bin/g++-11
 conan install ..
 cmake ..
 cmake --build .
+```
+
+# Current Conan Profile
+```
+[settings]
+os=Linux
+os_build=Linux
+arch=x86_64
+arch_build=x86_64
+compiler=gcc
+compiler.version=11
+compiler.libcxx=libstdc++11
+build_type=Release
+[options]
+[build_requires]
+[env]
 ```
