@@ -7,7 +7,7 @@ int main()
 {
     try
     {
-        Networking::Address a("127.0.0.1", 34000);
+        Networking::Address a("172.18.0.2", 34000);
         Networking::ClientSocket client(a);
         std::vector<uint8_t> data = {'h', 'e', 'l', 'l', 'o'};
         client.sendData(data);

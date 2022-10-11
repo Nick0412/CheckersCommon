@@ -20,6 +20,7 @@ namespace Networking
     public:
         Address();
         Address(const std::string& ipAddress, uint16_t port, IpType type = IpType::IPv4);
+        Address(uint16_t port, IpType type = IpType::IPv4);
         std::string getIpAddress() const;
         uint16_t getPort() const;
         std::size_t size() const;

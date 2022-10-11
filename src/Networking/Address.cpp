@@ -15,6 +15,13 @@ namespace Networking
         address.sin_addr = ConvertIpAddressToNetworkAddress(ipAddress);
     }
 
+    Address::Address(uint16_t port, IpType type)
+    {
+        address.sin_family = type;
+        address.sin_port = ConvertPortToNetworkShort(port);
+        address.sin_addr.s_addr = INADDR_ANY;
+    }
+
     std::string Address::getIpAddress() const
     {
         char* ipAddressPointer = inet_ntoa(address.sin_addr);

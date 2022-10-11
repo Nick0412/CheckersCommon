@@ -6,7 +6,8 @@ int main()
 {
     try
     {
-        Networking::Address a("127.0.0.1", 34000);
+        // Networking::Address a("172.18.0.1", 34000);
+        Networking::Address a(34000);
         Networking::ServerSocket server = Networking::ServerSocket::Builder()
             .withAddress(a)
             .withIpType(Networking::IpType::IPv4)
